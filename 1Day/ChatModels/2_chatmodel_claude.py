@@ -5,4 +5,5 @@ load_dotenv()
 
 
 model = ChatAnthropic(model = "claude-3-5-sonnet-20241022")
-model.invoke("What is capital of India")
+result = model.invoke("What is capital of India")
+print(result.content)

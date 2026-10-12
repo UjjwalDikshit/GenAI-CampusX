@@ -1,6 +1,6 @@
 from langchain_openai import OpenAIEmbeddings
 from dotenv import load_dotenv
-from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import cosine_similarity # cosine_similarity is for finding query_embedding similarity with embeddign stored in db
 import numpy as np
 
 load_dotenv()
@@ -20,8 +20,10 @@ query = "tell me about bumrah"
 doc_embeddings = embedding.embed_documents(document)
 query_embedding = embedding.embed_query(query)
 
+print(cosine_similarity([query_embedding], doc_embeddings))
 scores = cosine_similarity([query_embedding], doc_embeddings)[0] # keep both in 2d, second is already in 2D
-index, score = sorted(list(enumerate(scores)),key=lambda x: x[1][-1]) # keeep index and sort so thay you remeber index of score. 
+# attach index with each similarity scores, so that on sorting, it doesn't get randomised,and we can easily find idnex of actual content|document
+index, score = sorted(list(enumerate(scores)),key=lambda x: x[1])[-1] # keeep index and sort so thay you remeber index of score. 
 
 
 print(query)

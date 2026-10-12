@@ -44,3 +44,21 @@ if st.button('Summarize'):
         'length_input':length_input
     })
     st.write(result.content)
+
+
+
+    # pip install streamlit
+    # streamlit hello => verify installation
+    # streamlit run streamlit_app.py
+
+    # Title and Text: st.title("Hello Streamlit!") st.text("This is a simple text.")
+
+    # Markdown: st.markdown("### This is a markdown")
+
+    # Checkbox: if st.checkbox("Show/Hide"): st.text("Showing the widget")
+
+    # Radio Button: status = st.radio("Select Gender: ", ('Male', 'Female')) if status == 'Male': st.success("Male") else: st.success("Female")
+
+
+
+

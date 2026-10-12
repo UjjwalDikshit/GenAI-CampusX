@@ -1,0 +1,22 @@
+
+// if project is using multiple language then use this type
+
+/*
+    object -> seems like python dictionary type -> json call object
+    properties -> can have multiple attributes
+    required -> attributes must be in schema
+
+    down in correct format
+*/
+
+{
+    "title":"student",
+    "description":"schema about students",
+    "type":"object",
+    "properties":{
+        "name":"string",
+        "age":"integer"
+    },
+    "required":["name"] 
+
+}
